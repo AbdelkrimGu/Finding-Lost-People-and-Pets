@@ -1,0 +1,183 @@
+
+<section>
+    <div class="container ">
+
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card shadow border-0 rounded-3 mb-4 ">
+                    <div class="card-body text-center profile-nav">
+                        <img src="assets\images\profile_comm.png" alt="avatar" class="rounded-circle img-fluid"
+                            style="width: 150px;">
+                        <h5 class="my-3">{{userinfo.nom }}{{userinfo.prenom }}</h5>
+
+
+                        <ul class="nav nav-pills nav-stacked flex-column ">
+                            <li class=" d-block aa"><a (click)="showprofile()" > <i class="fa fa-user"></i> Profile</a></li>
+                            <li class="aa"><a  (click)="showeditprofile()"> <i class="fa fa-edit"></i> Edit profile</a></li>
+                            <li class="aa"><a  (click)="logout()"> <i class="fa fa-edit"></i> Log Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-8">
+                <div class="card shadow border-0 rounded-3  mb-4" >
+                    <div class="card-body" >
+                        <div *ngIf="profile">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">First nom</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">{{userinfo.nom }}</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Last nom</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">{{userinfo.prenom }}</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Email</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">{{userinfo.email }}</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Phone</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">{{userinfo.telephone }}</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Sexe</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">{{userinfo.sexe }}</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">City</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">{{userinfo.ville }}</p>
+                                </div>
+                            </div>
+                            <hr>
+                            
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Address</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">{{userinfo.adresse }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div *ngIf="edit_profile">
+                            <form action="">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <p class="mb-0">Full name</p>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" nom="" id="" placeholder="{{userinfo.nom }}">
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <p class="mb-0">Email</p>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <input type="email" class="form-control" nom="" id="" placeholder="{{userinfo.email }}">
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <p class="mb-0">Phone</p>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <input type="number" class="form-control" nom="" id="" placeholder="{{userinfo.telephone }}">
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <p class="mb-0">Sexe</p>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" nom="" id="" placeholder="{{userinfo.sexe}}">
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <p class="mb-0">City</p>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" nom="" id="" placeholder="{{userinfo.ville}}">
+                                    </div>
+                                </div>
+                                <hr>
+                               
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <p class="mb-0">Address</p>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" nom="" id="" placeholder="{{userinfo.adresse}}">
+                                    </div>
+                                </div>
+
+                                <button type="submit"  class="btn btn-primary w-25 my-4 d-block m-auto">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card shadow border-0 rounded-3  mb-4 mb-md-0" [routerLink]="['Lostlist']">
+                            <div class="card-body d-flex flex-row justify-content-around">
+                                <div class="p-2 fs-3 fw-bold text-secondary">
+                                    <a style="text-decoration:none; color: #585a61;" [routerLink]="['../Foundlist']">15</a> 
+                                </div>
+                                <div class="p-2  fs-4 text-secondary">
+                                    <a  style="text-decoration:none; color: #585a61;" [routerLink]="['../Foundlist']">Lost found</a>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card shadow border-0 rounded-3  mb-4 mb-md-0" [routerLink]="['Foundlist']">
+                            <div class="card-body d-flex flex-row justify-content-around">
+                                <div class="p-2 fs-3 fw-bold text-secondary">
+                                   <a  style="text-decoration:none; color: #585a61;"  [routerLink]="['../Lostlist']">05</a>  
+                                </div>
+                                <div class="p-2  fs-4 text-secondary">
+                                    <a  style="text-decoration:none; color: #585a61;"  [routerLink]="['../Lostlist']">Losts</a> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

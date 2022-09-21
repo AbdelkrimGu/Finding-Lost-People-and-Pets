@@ -1,0 +1,79 @@
+<div class="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <img src="assets\images\undraw_remotely_2j6y.svg" alt="Image" class="img-fluid">
+      </div>
+      <div class="col-md-7 contents">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="mb-4">
+              <h3>Sign In</h3>
+              <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
+            </div>
+            <form #f="ngForm" (ngSubmit)="onSubmit(f)"  method="post">
+              <div class="form-group first">
+                <input type="text" name="email" ngModel required #email="ngModel" class="form-control"
+                  placeholder="Address email" [email]=true>
+              </div>
+              <div class="" *ngIf="email.invalid && email.touched">
+                <div class="text-danger" *ngIf="email.errors?.['email']">
+                  Email address must be valid.
+                </div>
+              </div>
+              <br>
+              <div class="form-group last mb-4">
+                <input type="password" name="password" ngModel required #password="ngModel" class="form-control"
+                  placeholder="Password">
+              </div>
+              <span *ngIf="!errors" class="text-danger">Invalid informations</span>
+              <div class="d-flex mb-5 align-items-center space-between">
+
+                <label for="checkbox"><span class="caption"> <input id="checkbox" type="checkbox"
+                      checked="checked" />Remember me</span></label>
+                <span class="ml-auto"><a class="nav-link" [routerLink]="['resetpassword']">Forgot Password</a></span>
+              </div>
+
+              <div class="d-flex mb-5 align-items-center space-between">
+                <!-- <input type="submit" value="Log In" class="btn btn-block btn-primary" [disabled]="f.invalid"> -->
+                <button class="btn btn-primary" type="submit" [disabled]="f.invalid">
+                  <div *ngIf="loading">
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    <span class="mx-2">Loading...</span>
+                  </div>
+                  <span *ngIf="!loading">Login</span>
+                </button>
+
+
+
+                <a class="text-left ml-4 text-muted" [routerLink]="['register']" routerLinkActive="active">or register
+                  here </a>
+              </div>
+              <span class="d-block text-left my-4 text-muted">&mdash; or login with &mdash;</span>
+
+              <div class="social-login">
+                <a href="#" class="facebook">
+                  <span class="icon-facebook mr-3">
+                    <i class="fa-brands fa-facebook-f fa-lg"></i>
+                  </span>
+                </a>
+                <a href="#" class="twitter">
+                  <span class="icon-twitter mr-3">
+                    <i class="fa-brands fa-twitter fa-lg"></i>
+                  </span>
+                </a>
+                <a href="#" class="google">
+                  <span class="icon-google mr-3">
+                    <i class="fa-brands fa-google fa-lg"></i>
+                  </span>
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

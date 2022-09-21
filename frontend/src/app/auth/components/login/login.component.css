@@ -1,0 +1,157 @@
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #f8fafb;
+  }
+  
+  p {
+    color: #b3b3b3;
+    font-weight: 300;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    font-family: "Roboto", sans-serif;
+  }
+  
+  a {
+    -webkit-transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+    transition: 0.3s all ease;
+  }
+  a:hover {
+    text-decoration: none !important;
+  }
+  
+  .content {
+    padding: 4rem 0;
+  }
+  
+  h2 {
+    font-size: 20px;
+  }
+  .row{
+    --bs-gutter-x: 0;
+  }
+  
+  .form-group {
+    overflow: hidden;
+    margin-bottom: 0;
+    padding: 15px 15px;
+    border-bottom: none;
+    position: relative;
+    background: #edf2f5;
+    border-bottom: 1px solid #e6edf1;
+    border-radius: 5px;
+  }
+  
+  .form-group input {
+    background: transparent;
+  }
+  
+  
+  .form-control {
+    border: none;
+    padding: 0;
+    font-size: 20px;
+    border-radius: 0;
+  }
+  .form-control:active,
+  .form-control:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  
+  .content .bg {
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .content a {
+    color: #888;
+    text-decoration: underline;
+  }
+  
+  .content .btn {
+    height: 54px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  
+  .content .forgot-pass {
+    position: relative;
+    font-size: 14px;
+    
+  }
+  .space-between{
+      justify-content: space-between;
+  }
+  
+  .social-login a {
+    text-decoration: none;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .social-login a span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  .social-login a:hover {
+    color: #fff;
+  }
+  a.facebook {
+    background: #3b5998;
+  }
+  a.facebook:hover {
+    background: #344e86;
+  }
+  a.twitter {
+    background: #1da1f2;
+  }
+  a.twitter:hover {
+    background: #0d95e8;
+  }
+  a.google {
+    background: #ea4335;
+  }
+  a.google:hover {
+    background: #e82e1e;
+  }
+  
+  .control {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .control .caption {
+    position: relative;
+    top: 0.2rem;
+    color: #888;
+  }
+  
+  
+  
+  

@@ -1,0 +1,205 @@
+.tooltipp {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltipp .tooltiptext {
+    visibility: hidden;
+    border-radius: 15px;
+    background-color: rgb(28, 101, 140, 0.8);
+    width: 300px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltipp .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 40%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #1C658C transparent transparent transparent;
+}
+
+.tooltipp:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+    height: 40px ;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+.donate{
+    top: 100px;
+    right: 20px;
+}
+
+.lnkto{
+  text-decoration: none;
+  color: white;
+}
+.lnkto :hover{
+  text-decoration: none;
+  color: white;
+}
+
+  .accordion-list {
+    padding: 0 100px;
+  }
+    .accordion-list ul {
+    padding: 0;
+    list-style: none;
+  }
+    .accordion-list li + li {
+    margin-top: 15px;
+  }
+    .accordion-list li {
+    padding: 20px;
+    background: #fff;
+    border-radius: 4px;
+    position: relative;
+  }
+    .accordion-list a {
+    display: block;
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    padding: 0 30px;
+    outline: none;
+    cursor: pointer;
+  }
+    .accordion-list .fa-circle-question {
+    font-size: 24px;
+    position: absolute;
+    right: 0;
+    left: 20px;
+    color: #b1c0df;
+  }
+    .accordion-list .icon-show,   .accordion-list .icon-close {
+    font-size: 24px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+    .accordion-list p {
+    margin-bottom: 0;
+    padding: 10px 0 0 0;
+  }
+    .accordion-list .icon-show {
+    display: none;
+  }
+    .accordion-list a.collapsed {
+    color: #343a40;
+  }
+    .accordion-list a.collapsed:hover {
+    color: #1C658C;
+  }
+    .accordion-list a.collapsed .icon-show {
+    display: inline-block;
+  }
+    .accordion-list a.collapsed .icon-close {
+    display: none;
+  }
+
+  .bdge {
+    height: 21px;
+    background-color: orange;
+    color: #fff;
+    font-size: 11px;
+    padding: 8px;
+    border-radius: 4px;
+    line-height: 3px;
+  }
+  
+  .comments {
+    text-decoration: underline;
+    text-underline-position: under;
+    cursor: pointer;
+  }
+  
+  .dot {
+    height: 7px;
+    width: 7px;
+    margin-top: 3px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .hit-voting:hover {
+    color: blue;
+  }
+  
+  .hit-voting {
+    cursor: pointer;
+  }
+
+
+  /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(255, 255, 255, 0.735); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 300px;
+}
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 75px;
+  right: 50px;
+  color: #1c1c1c;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}

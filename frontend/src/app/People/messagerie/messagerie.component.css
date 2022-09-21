@@ -1,0 +1,92 @@
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1C658C;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #398AB9;
+}
+
+.chat-messages {
+    display: flex;
+    flex-direction: column;
+    max-height: 60vh;
+    overflow-y: scroll;
+    min-width: 60vw;
+    
+}
+
+.chat-message-left,
+.chat-message-right {
+    display: flex;
+    flex-shrink: 0;
+}
+
+.mess-gauche {
+    border-radius: 0px 20px 20px 20px !important;
+    background-color: white !important;
+}
+
+.mess-droit {
+    border-radius: 20px 0px 20px 20px !important;
+    background-color: #1C658C !important;
+    color: white;
+}
+
+.chat-message-left {
+    margin-right: auto;
+}
+
+.chat-message-right {
+    flex-direction: row-reverse;
+    margin-left: auto
+}
+
+.py-3 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+.px-4 {
+    padding-right: 1.5rem !important;
+    padding-left: 1.5rem !important;
+}
+
+.flex-grow-0 {
+    flex-grow: 0 !important;
+}
+
+.user-card {
+    background-color: #f2f5fa !important;
+    border: 0;
+    border-radius: 15px !important;
+}
+
+.users {
+    background-color: transparent;
+}
+
+.message{
+    background-color: white !important;
+    border: 0;
+    border-radius: 15px !important;
+    padding: 10px;
+}
+.recherche {
+    background-color: transparent;
+    border: 0;
+    display: inline-block;
+}
+
+.recherche:focus,
+.recherche:focus {
+    outline: none !important;
+}

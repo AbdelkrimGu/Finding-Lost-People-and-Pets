@@ -1,0 +1,97 @@
+<div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <img src="assets\images\undraw_remotely_2j6y.svg" alt="Image" class="img-fluid">
+        </div>
+        <div class="col-md-7 contents">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div>
+              <h3>Register</h3>
+              <p >Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
+            </div>
+            <form #f="ngForm" (ngSubmit)="onSubmit(f)"  method="post">
+             <div class="row"> 
+                <div class=" form-group first col-md-5 col-sm-12 mb-xs-4 mt-sm-4 ">
+                    <input type="text" name="name" ngModel required #name="ngModel" class="form-control" placeholder="Nom">
+                </div>
+              <div class=" form-group first col-md-5 col-sm-12 offset-md-2 mt-sm-4   ">
+                <input type="text" name="username" ngModel required #username="ngModel" class="form-control" placeholder="Prenom">
+              </div>
+            </div>
+              <br>
+              <div class="form-group ">
+                <input type="email" name="email" ngModel required #email="ngModel"  class="form-control"  placeholder="Address email" [email]=true>
+              </div>
+              <div class="" *ngIf="email.invalid && (email.dirty || email.touched)">
+                <div class="text-danger" *ngIf="email.errors?.['required']">
+                  Email is required.
+                </div>
+                <div class="text-danger" *ngIf="email.errors?.['email']">
+                  Email address must be valid.
+                </div>
+              </div>
+
+              <div class="form-group  mt-4">
+                <input type="password" name="password" ngModel required #password="ngModel"  class="form-control"  placeholder="Password" minlength="6">
+              </div>
+              <div  *ngIf="(password.touched || password.dirty) ">
+                <div class="text-danger" *ngIf="password.errors?.['minlength']" >
+                  Password must be at least 6 characters.
+                </div>
+              </div>
+              <div class="form-group  mt-4 mb-4">
+                <input type="password" name="confirmpassword" ngModel required #confirmpassword="ngModel"  class="form-control"  placeholder="Confirm Password">
+              </div>
+              <div class="mt-n1" *ngIf="(confirmpassword.touched || confirmpassword.dirty) && password.value !==confirmpassword.value">
+                <div class="text-danger" >
+                 Password and Confirm Password should be same.
+                </div>
+              </div>
+              <span *ngIf="!errors" class="text-danger">Invalid informations</span>
+             
+              <div class="d-flex mb-5 align-items-center ">
+            
+                <label for="checkbox" ><span class="caption"> <input name="checkbo" type="checkbox" ngModel required #checkbo="ngModel" checked="checked"/> Accept all conditions</span></label>
+              </div>
+
+              <div class="d-flex mb-5 align-items-center space-between">
+                <input  type="submit" value="Register" class="btn btn-block btn-primary" [disabled]="f.invalid && checkbo.invalid">
+                <button class="btn btn-primary" type="submit" [disabled]="f.invalid && checkbo.invalid">
+                  <div *ngIf="loading">
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    <span class="mx-2">Loading...</span>
+                  </div>
+                  <span *ngIf="!loading">Register</span>
+                </button>
+                  <a class="text-left ml-4 text-muted" [routerLink]="['login']" routerLinkActive="active" >or login here </a>
+                </div>
+              <span class="d-block text-left my-4 text-muted">&mdash; or Register with &mdash;</span>
+              
+              <div class="social-login">
+                <a href="#" class="facebook">
+                  <span class="icon-facebook mr-3">
+                    <i class="fa-brands fa-facebook-f fa-lg"></i>
+                  </span> 
+                </a>
+                <a href="#" class="twitter">
+                  <span class="icon-twitter mr-3">
+                    <i class="fa-brands fa-twitter fa-lg"></i>
+                  </span> 
+                </a>
+                <a href="#" class="google">
+                  <span class="icon-google mr-3">
+                    <i class="fa-brands fa-google fa-lg"></i>
+                  </span> 
+                </a>
+              </div>
+            </form>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>

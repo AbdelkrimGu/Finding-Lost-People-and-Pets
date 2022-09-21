@@ -1,0 +1,38 @@
+
+<div class="registration-form " style="margin-top: 75px;">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+       
+        <div class="form-group">
+            <input type="text" class="form-control item" name="First_Name" ngModel  #First_Name="ngModel" placeholder="first name">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control item" name="Family_Name" ngModel  #Family_Name="ngModel" placeholder="family name">
+        </div>
+        <div class="form-group">
+            <input type="number" class="form-control item" name="Phone" ngModel  #Phone="ngModel" placeholder="phone-number">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control item" name="Address" ngModel  #Address="ngModel" placeholder="address">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control item" name="Gender"  ngModel  #Gender="ngModel" placeholder="gender">
+        </div>
+        <div class="form-group">
+            <input type="file" class="form-control item"name="image" (change)="fileChangeEvent($event)"  ngModel  #image="ngModel" placeholder="image">
+        </div>
+        <div class="text-danger" *ngIf="imagenotd">
+            Please change image.
+          </div>
+       
+        <div class="form-group">
+
+            <button type="submit" class="btn btn-block create-account">
+                <div *ngIf="load">
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    <span class="mx-2">Loading...</span>
+                </div>
+                <div *ngIf="load==false">Add Found</div></button>
+        </div>
+    </form>
+   
+</div>

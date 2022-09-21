@@ -1,0 +1,28 @@
+<div class="form-group d-flex mb-5 has-search w-50 m-auto shadow border-0 ">
+    <span class="fa fa-search form-control-feedback border-0 "></span>
+    <input type="text" class="form-control border-0 " [(ngModel)]="term" placeholder="Search..">
+  </div>
+  
+  <div class="row row-cols-1 row-cols-md-3 g-4 mt-5">
+      <div *ngFor="let  found of  founds | filter:term " class="col">
+        <div class="card h-100" style="width: 18rem;">
+          <img src="http://127.0.0.1:8000/{{ found.Image}}" class="card-img-top  d-block m-auto w-25 h-25 " alt="...">
+          <div class="card-body">
+            <h5 class="card-title text-center">{{ found.First_Name}}, {{ found.Family_Name}}</h5>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Address : {{ found.Address}}</li>
+            <li class="list-group-item">Telephone : {{ found.Phone}}</li>
+            <li class="list-group-item">Gender : {{ found.Gender}}</li>
+          </ul>
+          <div class="card-body">
+           
+            <text class="text-dark me-5">state :</text> 
+            <div *ngIf="found.is_identified" class="btn btn-success ms-5"> Found</div>
+            <div *ngIf="!found.is_identified" class="btn btn-info ms-5 text-white"> Not yet</div>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  

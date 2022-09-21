@@ -1,0 +1,112 @@
+<div class="container p-0" style="margin-top: 80px">
+
+
+
+    <div class="card border-0">
+        <div class="row g-0">
+            <div class="col-12 col-lg-3 col-xl-3 ">
+                <h1 class="h4 mb-3">Messages</h1>
+                <div class="d-none d-md-block ">
+                    <div class="flex-grow-1 user-card d-flex flex-row form-control my-3 h-50">
+                        <label for="recherche"><i class="fa-solid fa-magnifying-glass"></i>
+                        </label>
+                        <input name="recherche" type="text" class="recherche mx-2" [(ngModel)]="term"
+                            placeholder="Search...">
+                    </div>
+                </div>
+
+
+                <div class="user-card p-2">
+                    <a *ngFor="let conv of conversations | filter:term  "
+                        class="list-group-item list-group-item-action border-0 users "
+                        (click)="opencnv(conv.name ,conv._id,conv.myid)">
+                        <div class="d-flex align-items-start ">
+                            <img src="assets\images\profile_comm.png" class="rounded-circle mx-2" alt="Vanessa Tucker"
+                                width="37" height="37">
+                            <div class="flex-grow-1 mx-3">
+                                <strong>{{conv.name}}</strong>
+                                <div class="small mt-2"> {{conv.updatedAt | date : "mediumTime"}}</div>
+
+
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+                <hr class="d-block d-lg-none mt-1 mb-0">
+            </div>
+            <div  class="col-12 col-lg-8 offset-lg-1 d-flex">
+
+                <div *ngIf="!user" class="d-block m-auto">aucune conversations n'est selectioné</div>
+                <div>
+                <div *ngIf="user" class="py-2 px-4  d-none d-lg-block">
+                    <div class="d-flex align-items-center py-1">
+                        <div class="position-relative ">
+                            <img src="assets\images\profile_comm.png" class="rounded-circle " alt="Sharon Lessman"
+                                width="37" height="37">
+                        </div>
+                        <div class="flex-grow-1 pl-3 mx-2">
+                            <strong>{{user}}</strong>
+                        </div>
+                        <div>
+                            <div><i class="fa-solid fa-ellipsis-vertical"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf="user" class="position-relative user-card " >
+                    <div class="chat-messages p-4" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+                        <!-- <div class="d-block m-auto mt-5 mb-5">
+                            aucun message
+                        </div> -->
+                        <div *ngFor="let message of messages" class="" [ngClass]=" message.sender == senderid  ? 'chat-message-right mb-4' : 'chat-message-left pb-4'" >
+                            <div>
+                                <img src="assets\images\profile_comm.png" class="rounded-circle mx-2" alt="Chris Wood" 
+                                    width="37" height="37">
+                                <div class="text-muted small text-nowrap mt-2">{{message.createdAt | date : "shortTime"}}</div>
+                            </div>
+                            <div class="flex-shrink-1 bg-light rounded py-2 px-3 mx-3  " [ngClass]=" message.sender == senderid  ? 'mess-droit ms-5' : 'mess-gauche'">
+                                <div class="fw-bold mb-1 ">{{message.sender}}</div>
+                                {{message.text}}
+                            </div>
+                        </div>
+                        <!-- <div id="heyo">  </div> -->
+                        <div  *ngFor="let message of messageList" class="" [ngClass]=" message.sender == senderid  ? 'chat-message-right mb-4' : 'chat-message-left pb-4'" >
+                            <div>
+                                <img src="assets\images\profile_comm.png" class="rounded-circle mx-2" 
+                                    width="37" height="37">
+                                <div class="text-muted small text-nowrap mt-2">  {{message.createdAt  | date : "shortTime"}}</div>
+                            </div>
+                            <div class="flex-shrink-1 bg-light rounded py-2 px-3 mx-3 "  [ngClass]=" message.sender == senderid  ? 'mess-droit ms-5' : 'mess-gauche'" >
+                                <div class="fw-bold mb-1 ">  {{message.sender}} </div>
+                                {{message.message}}
+                            </div>
+                        </div>
+                        
+                      
+                    </div>
+
+                    <div class="flex-grow-0 py-3 px-4 user-card">
+                        <form #f="ngForm" (ngSubmit)="onSubmit(f)" >
+                            <div class="input-group ">
+                                <input type="text" name="text"   ngModel  #text="ngModel"  class="form-control message " placeholder="type your message...">
+                                <input type="file" id="attachfile"  name="file" ngModel  #file="ngModel" style="display: none;">
+                                <label for="attachfile" style="cursor: pointer;">
+                                    <i class="fa-solid fa-paperclip font-size-16 btn-lg waves-effect"></i>
+                                </label>
+                                <input class="d-none" id="submit" type="submit">
+                                <label for="submit" style="cursor: pointer;"><i
+                                        class="fa-solid fa-paper-plane font-size-16 btn-lg waves-effect"></i></label>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="card shadow border-0 d-flex flex-row  d-block m-auto w-75 h-25 mt-5" >
+  <img src="http://127.0.0.1:8000/{{lost.All.Image}}" class="card-img-top " style="max-height:400px ;max-width: 400px;" alt="...">
+ 
+  <div class="card-body" style="max-width: 400px;">
+    <h4 class="card-title text-center">Informations du perdu</h4>
+    <ul class="list-group list-group-flush mt-5">
+      <li class="list-group-item"><strong>Nom :</strong> {{lost.All.Family_Name}}</li>
+      <li class="list-group-item"><strong>Prenom :</strong> {{lost.All.First_Name}}</li>
+      <li class="list-group-item"><strong>Address :</strong> {{lost.All.Address}}</li>
+      <li class="list-group-item"><strong>Telephone :</strong> {{lost.All.Phone}}</li>
+      <li class="list-group-item"><strong>Gender :</strong> {{lost.All.Gender}}</li>
+      <li class="list-group-item"><strong>Ajouter Par :</strong>{{lost.name}}</li>
+      <!-- <li class="list-group-item"><strong></strong> </li> -->
+      <h5 class=" text-center mt-3 mb-3"> Pourcentage:<span style="color: green ;">{{lost.Per}} %</span> </h5>
+      <div class="d-flex justify-content-around mt-3">
+        <button class="btn btn-danger"><a style="text-decoration: none; color: white;" [routerLink]="['../home']">It's not him</a>
+        </button>
+        <button class="btn btn-success" (click)="contact()">Contact him</button>
+
+      </div>
+    </ul>
+  </div>
+</div>
